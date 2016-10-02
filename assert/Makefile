@@ -7,6 +7,6 @@ verify: main.c
 	infer -- gcc -c $<
 
 clean:
-	rm -f a.out *.o
+	rm -rf a.out *.o infer-out/
 
 .PHONY: all verify clean
