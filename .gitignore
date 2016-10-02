@@ -31,3 +31,6 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Infer
+infer-out/
