@@ -34,3 +34,4 @@
 
 # Infer
 infer-out/
+*.o.sh
