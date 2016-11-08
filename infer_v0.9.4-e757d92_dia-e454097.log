@@ -1,0 +1,1612 @@
+Infer version v0.9.4-e757d92
+Copyright 2009 - present Facebook. All Rights Reserved.
+make  all-recursive
+make[1]: Entering directory '/home/kiwamu/src/dia'
+Making all in lib
+make[2]: Entering directory '/home/kiwamu/src/dia/lib'
+gdk-pixbuf-csource --build-list dia_broken_icon ./pixmaps/broken.png dia_broken_chain_icon ./pixmaps/broken-chain.png dia_unbroken_chain_icon ./pixmaps/unbroken-chain.png stdpath_icon ./pixmaps/standard-path.png > dia-lib-icons.h
+/usr/bin/glib-genmarshal --prefix=dia_marshal ./diamarshal.list --header >> xgen-gwmh \
+&& (cmp -s xgen-gwmh diamarshal.h || cp xgen-gwmh diamarshal.h) \
+&& rm -f xgen-gwmh xgen-gwmh~
+echo "#include \"diamarshal.h\"" >> xgen-gwmc \
+&& /usr/bin/glib-genmarshal --prefix=dia_marshal ./diamarshal.list --body >> xgen-gwmc \
+&& cp xgen-gwmc diamarshal.c \
+&& rm -f xgen-gwmc xgen-gwmc~
+make  all-recursive
+make[3]: Entering directory '/home/kiwamu/src/dia/lib'
+Making all in pixmaps
+make[4]: Entering directory '/home/kiwamu/src/dia/lib/pixmaps'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/lib/pixmaps'
+make[4]: Entering directory '/home/kiwamu/src/dia/lib'
+  CC       diagramdata.lo
+  CC       layer.lo
+  CC       geometry.lo
+  CC       color.lo
+  CC       dia_xml.lo
+  CC       attributes.lo
+  CC       text.lo
+  CC       textline.lo
+  CC       font.lo
+  CC       group.lo
+  CC       utils.lo
+  CC       arrows.lo
+  CC       message.lo
+  CC       focus.lo
+  CC       sheet.lo
+  CC       connectionpoint.lo
+  CC       object.lo
+  CC       object-alias.lo
+  CC       object_defaults.lo
+  CC       connection.lo
+  CC       orth_conn.lo
+  CC       poly_conn.lo
+  CC       bezier_conn.lo
+  CC       bezier-common.lo
+  CC       element.lo
+  CC       polyshape.lo
+  CC       beziershape.lo
+  CC       objchange.lo
+  CC       dialogs.lo
+  CC       widgets.lo
+  CC       diaoptionmenu.lo
+  CC       units.lo
+  CC       dia_image.lo
+  CC       pattern.lo
+  CC       standard-path.lo
+  CC       intl.lo
+  CC       filter.lo
+  CC       connpoint_line.lo
+  CC       properties.lo
+  CC       propdesc.lo
+  CC       proplist.lo
+  CC       propoffsets.lo
+  CC       propobject.lo
+  CC       prop_basic.lo
+  CC       prop_dict.lo
+  CC       prop_matrix.lo
+  CC       prop_pattern.lo
+  CC       prop_pixbuf.lo
+  CC       prop_inttypes.lo
+  CC       prop_geomtypes.lo
+  CC       prop_attr.lo
+  CC       prop_text.lo
+  CC       prop_widgets.lo
+  CC       prop_sdarray.lo
+  CC       prop_sdarray_widget.lo
+  CC       propdialogs.lo
+  CC       propregistry.lo
+  CC       dia_dirs.lo
+  CC       plug-ins.lo
+  CC       paper.lo
+  CC       boundingbox.lo
+  CC       dynamic_obj.lo
+  CC       create.lo
+  CC       diatransform.lo
+  CC       diarenderer.lo
+  CC       diaimportrenderer.lo
+  CC       diainteractiverenderer.lo
+  CC       diagdkrenderer.lo
+  CC       diapathrenderer.lo
+  CC       path-math.lo
+  CC       diapatternselector.lo
+  CC       diatransformrenderer.lo
+  CC       diasvgrenderer.lo
+  CC       dia_svg.lo
+  CC       autoroute.lo
+  CC       parent.lo
+  CC       render_pixmap.lo
+  CC       diaarrowchooser.lo
+  CC       diaarrowselector.lo
+  CC       diacolorselector.lo
+  CC       dialinestyleselector.lo
+  CC       dialinechooser.lo
+  CC       diadynamicmenu.lo
+  CC       diafontselector.lo
+  CC       persistence.lo
+  CC       diaerror.lo
+  CC       diamarshal.lo
+  CC       debug.lo
+  CC       prefs.lo
+  CC       dialib.lo
+  CC       diacontext.lo
+  CC       diacellrendererenum.lo
+  CC       diacellrendererproperty.lo
+  CCLD     libdia.la
+make[4]: Leaving directory '/home/kiwamu/src/dia/lib'
+make[3]: Leaving directory '/home/kiwamu/src/dia/lib'
+make[2]: Leaving directory '/home/kiwamu/src/dia/lib'
+Making all in objects
+make[2]: Entering directory '/home/kiwamu/src/dia/objects'
+Making all in standard
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/standard'
+gdk-pixbuf-csource --raw --build-list arc_icon ./pixmaps/arc.png beziergon_icon ./pixmaps/beziergon.png bezierline_icon ./pixmaps/bezierline.png box_icon ./pixmaps/box.png ellipse_icon ./pixmaps/ellipse.png image_icon ./pixmaps/image.png line_icon ./pixmaps/line.png outline_icon ./pixmaps/outline.png polygon_icon ./pixmaps/polygon.png polyline_icon ./pixmaps/polyline.png text_icon ./pixmaps/text.png zigzagline_icon ./pixmaps/zigzagline.png > tool-icons.h
+make  all-am
+make[4]: Entering directory '/home/kiwamu/src/dia/objects/standard'
+  CC       arc.lo
+  CC       box.lo
+  CC       ellipse.lo
+  CC       textobj.lo
+  CC       line.lo
+  CC       zigzagline.lo
+  CC       polyline.lo
+  CC       bezier.lo
+  CC       standard.lo
+  CC       image.lo
+  CC       outline.lo
+  CC       polygon.lo
+  CC       beziergon.lo
+  CCLD     libstandard_objects.la
+make[4]: Leaving directory '/home/kiwamu/src/dia/objects/standard'
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/standard'
+Making all in network
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/network'
+  CC       network.lo
+  CC       bus.lo
+  CC       radiocell.lo
+  CC       basestation.lo
+  CC       wanlink.lo
+  CCLD     libnetwork_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/network'
+Making all in UML
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/UML'
+  CC       uml.lo
+  CC       class.lo
+  CC       class_dialog.lo
+  CC       class_attributes_dialog.lo
+  CC       class_operations_dialog.lo
+  CC       class_templates_dialog.lo
+  CC       note.lo
+  CC       actor.lo
+  CC       usecase.lo
+  CC       realizes.lo
+  CC       constraint.lo
+  CC       small_package.lo
+  CC       large_package.lo
+  CC       implements.lo
+  CC       generalization.lo
+  CC       association.lo
+  CC       dependency.lo
+  CC       message.lo
+  CC       object.lo
+  CC       lifeline.lo
+  CC       component.lo
+  CC       component_feature.lo
+  CC       classicon.lo
+  CC       state.lo
+  CC       activity.lo
+  CC       state_term.lo
+  CC       node.lo
+  CC       branch.lo
+  CC       fork.lo
+  CC       stereotype.lo
+  CC       transition.lo
+  CC       umlattribute.lo
+  CC       umloperation.lo
+  CC       umlparameter.lo
+  CC       umlformalparameter.lo
+  CCLD     libuml_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/UML'
+Making all in ER
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/ER'
+  CC       entity.lo
+  CC       relationship.lo
+  CC       attribute.lo
+  CC       participation.lo
+  CC       er.lo
+  CCLD     liber_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/ER'
+Making all in FS
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/FS'
+  CC       fs.lo
+  CC       flow.lo
+  CC       flow-ortho.lo
+  CC       function.lo
+  CCLD     libfs_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/FS'
+Making all in flowchart
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/flowchart'
+  CC       box.lo
+  CC       parallelogram.lo
+  CC       diamond.lo
+  CC       ellipse.lo
+  CC       flowchart.lo
+  CCLD     libflowchart_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/flowchart'
+Making all in custom
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/custom'
+  CC       shape_info.lo
+  CC       shape_typeinfo.lo
+  CC       custom_object.lo
+  CC       custom_util.lo
+  CC       custom.lo
+  CCLD     libcustom_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/custom'
+Making all in custom_lines
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/custom_lines'
+  CC       custom_lines.lo
+  CC       custom_linetypes.lo
+  CC       line_info.lo
+  CCLD     libcustom_lines_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/custom_lines'
+Making all in GRAFCET
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/GRAFCET'
+  CC       grafcet.lo
+  CC       step.lo
+  CC       action.lo
+  CC       action_text_draw.lo
+  CC       transition.lo
+  CC       boolequation.lo
+  CC       condition.lo
+  CC       vergent.lo
+  CC       vector.lo
+  CCLD     libgrafcet_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/GRAFCET'
+Making all in chronogram
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/chronogram'
+  CC       chronogram.lo
+  CC       chronoref.lo
+  CC       chronoline.lo
+  CC       chronoline_event.lo
+  CCLD     libchronogram_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/chronogram'
+Making all in SADT
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/SADT'
+  CC       sadt.lo
+  CC       arrow.lo
+  CC       box.lo
+  CC       annotation.lo
+  CCLD     libsadt_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/SADT'
+Making all in Misc
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/Misc'
+  CC       libmisc.lo
+  CC       analog_clock.lo
+  CC       diagram_as_object.lo
+  CC       grid_object.lo
+  CC       measure.lo
+  CC       n_gon.lo
+  CC       tree.lo
+  CCLD     libmisc_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/Misc'
+Making all in Istar
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/Istar'
+  CC       istar.lo
+  CC       actor.lo
+  CC       goal.lo
+  CC       other.lo
+  CC       link.lo
+  CCLD     libistar_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/Istar'
+Making all in Jackson
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/Jackson'
+  CC       jackson.lo
+  CC       domain.lo
+  CC       requirement.lo
+  CC       phenomenon.lo
+  CCLD     libjackson_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/Jackson'
+Making all in KAOS
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/KAOS'
+  CC       kaos.lo
+  CC       goal.lo
+  CC       other.lo
+  CC       metabinrel.lo
+  CC       metaandorrel.lo
+  CCLD     libkaos_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/KAOS'
+Making all in AADL
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/AADL'
+  CC       aadl.lo
+  CC       aadlbox.lo
+  CC       aadldata.lo
+  CC       aadlport.lo
+  CC       aadlbus.lo
+  CC       aadldevice.lo
+  CC       aadlmemory.lo
+  CC       aadlprocess.lo
+  CC       aadlprocessor.lo
+  CC       aadlsubprogram.lo
+  CC       aadlsystem.lo
+  CC       aadltext.lo
+  CC       aadlthread.lo
+  CC       aadlthreadgroup.lo
+  CC       aadlpackage.lo
+  CC       edit_port_declaration.lo
+  CCLD     libaadl_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/AADL'
+Making all in Database
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/Database'
+  CC       database.lo
+  CC       table.lo
+  CC       reference.lo
+  CC       compound.lo
+  CCLD     libdb_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/Database'
+Making all in Sozi
+make[3]: Entering directory '/home/kiwamu/src/dia/objects/Sozi'
+  CC       libsozi_objects_la-sozi.lo
+  CC       libsozi_objects_la-sozi-object.lo
+  CC       libsozi_objects_la-sozi-frame.lo
+  CC       libsozi_objects_la-sozi-media.lo
+  CCLD     libsozi_objects.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects/Sozi'
+make[3]: Entering directory '/home/kiwamu/src/dia/objects'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/objects'
+make[2]: Leaving directory '/home/kiwamu/src/dia/objects'
+Making all in plug-ins
+make[2]: Entering directory '/home/kiwamu/src/dia/plug-ins'
+Making all in cgm
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/cgm'
+  CC       cgm.lo
+  CCLD     libcgm_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/cgm'
+Making all in cairo
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/cairo'
+  CC       diacairo.lo
+  CC       diacairo-interactive.lo
+  CC       diacairo-renderer.lo
+  CC       diacairo-print.lo
+  CCLD     libcairo_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/cairo'
+Making all in pstricks
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/pstricks'
+  CC       pstricks.lo
+  CC       render_pstricks.lo
+  CCLD     libpstricks_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/pstricks'
+Making all in hpgl
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/hpgl'
+  CC       hpgl.lo
+  CCLD     libhpgl_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/hpgl'
+Making all in wpg
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/wpg'
+  CC       wpg.lo
+  CC       wpg-import.lo
+  CCLD     libwpg_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/wpg'
+Making all in svg
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/svg'
+  CC       svg.lo
+  CC       render_svg.lo
+  CC       svg-import.lo
+  CCLD     libsvg_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/svg'
+Making all in shape
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/shape'
+  CC       shape.lo
+  CC       shape-export.lo
+  CCLD     libshape_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/shape'
+Making all in dxf
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/dxf'
+  CC       dxf.lo
+  CC       dxf-export.lo
+  CC       dxf-import.lo
+  CC       autocad_pal.lo
+  CCLD     libdxf_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/dxf'
+Making all in python
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/python'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/python'
+Making all in xfig
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/xfig'
+  CC       xfig.lo
+  CC       xfig-import.lo
+  CC       xfig-export.lo
+  CC       xfig-common.lo
+  CCLD     libxfig_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/xfig'
+Making all in wmf
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/wmf'
+  CXX      wmf.lo
+  CXX      wmf_gdi.lo
+  CXXLD    libwmf_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/wmf'
+Making all in libart
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/libart'
+  CC       dialibart.lo
+  CC       dialibartrenderer.lo
+  CC       render_libart.lo
+  CC       export_png.lo
+  CCLD     libart_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/libart'
+Making all in metapost
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/metapost'
+  CC       metapost.lo
+  CC       render_metapost.lo
+  CCLD     libmetapost_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/metapost'
+Making all in xslt
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/xslt'
+  CC       xslt.lo
+  CC       xsltdialog.lo
+  CCLD     libxslt_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/xslt'
+Making all in pixbuf
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/pixbuf'
+  CC       pixbuf.lo
+  CCLD     libpixbuf_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/pixbuf'
+Making all in pgf
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/pgf'
+  CC       pgf.lo
+  CC       render_pgf.lo
+  CCLD     libpgf_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/pgf'
+Making all in vdx
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/vdx'
+  CC       vdx.lo
+  CC       vdx-import.lo
+  CC       vdx-export.lo
+  CC       vdx-common.lo
+  CC       vdx-xml.lo
+  CCLD     libvdx_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/vdx'
+Making all in postscript
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/postscript'
+  CC       postscript.lo
+  CC       ps-utf8.lo
+  CC       diapsrenderer.lo
+  CC       diapsft2renderer.lo
+  CC       paginate_psprint.lo
+  CC       render_eps.lo
+  CCLD     libpostscript_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/postscript'
+Making all in drs
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/drs'
+  CC       dia-render-script.lo
+  CC       dia-render-script-import.lo
+  CC       dia-render-script-object.lo
+  CC       dia-render-script-renderer.lo
+  CCLD     libdrs_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/drs'
+Making all in stress
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/stress'
+  CC       stress.lo
+  CC       stress-memory.lo
+  CCLD     libstress_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/stress'
+Making all in layout
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/layout'
+  CXX      dia-graph.lo
+  CXX      layout.lo
+  CXXLD    liblayout_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/layout'
+Making all in pdf
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins/pdf'
+  CC       pdf.lo
+  CXXLD    libpdf_filter.la
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins/pdf'
+make[3]: Entering directory '/home/kiwamu/src/dia/plug-ins'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/plug-ins'
+make[2]: Leaving directory '/home/kiwamu/src/dia/plug-ins'
+Making all in shapes
+make[2]: Entering directory '/home/kiwamu/src/dia/shapes'
+Making all in Circuit
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Circuit'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Circuit'
+Making all in flowchart
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/flowchart'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/flowchart'
+Making all in Contact
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Contact'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Contact'
+Making all in network
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/network'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/network'
+Making all in Pneumatic
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Pneumatic'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Pneumatic'
+Making all in Electric
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Electric'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Electric'
+Making all in Civil
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Civil'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Civil'
+Making all in jigsaw
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/jigsaw'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/jigsaw'
+Making all in MSE
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/MSE'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/MSE'
+Making all in SDL
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/SDL'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/SDL'
+Making all in Logic
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Logic'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Logic'
+Making all in sybase
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/sybase'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/sybase'
+Making all in Misc
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Misc'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Misc'
+Making all in Assorted
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Assorted'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Assorted'
+Making all in Cisco
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Cisco'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Cisco'
+Making all in Cybernetics
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Cybernetics'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Cybernetics'
+Making all in Map
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Map'
+Making all in Isometric
+make[4]: Entering directory '/home/kiwamu/src/dia/shapes/Map/Isometric'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/shapes/Map/Isometric'
+make[4]: Entering directory '/home/kiwamu/src/dia/shapes/Map'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/shapes/Map'
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Map'
+Making all in ChemEng
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/ChemEng'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/ChemEng'
+Making all in Gane_and_Sarson
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Gane_and_Sarson'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Gane_and_Sarson'
+Making all in BPMN
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/BPMN'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/BPMN'
+Making all in Lights
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Lights'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Lights'
+Making all in Shape_Design
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes/Shape_Design'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes/Shape_Design'
+make[3]: Entering directory '/home/kiwamu/src/dia/shapes'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/shapes'
+make[2]: Leaving directory '/home/kiwamu/src/dia/shapes'
+Making all in app
+make[2]: Entering directory '/home/kiwamu/src/dia/app'
+gdk-pixbuf-csource --raw --build-list dia_connectable_icon ./pixmaps/connectable.png dia_connectable_empty_icon ./pixmaps/connectable-empty.png dia_selectable_icon ./pixmaps/selectable.png dia_selectable_empty_icon ./pixmaps/selectable-empty.png dia_on_grid_icon ./pixmaps/on-grid.png dia_off_grid_icon ./pixmaps/off-grid.png dia_visible_icon ./pixmaps/visible.png dia_visible_empty_icon ./pixmaps/visible-empty.png dia_modify_tool_icon ./pixmaps/arrow-22.png dia_scroll_tool_icon ./pixmaps/scroll-22.png dia_textedit_tool_icon ./pixmaps/textedit-22.png dia_zoom_tool_icon ./pixmaps/zoom-22.png dia_group_icon ./pixmaps/group.png dia_ungroup_icon ./pixmaps/ungroup.png dia_mainpoints_on_icon ./pixmaps/mainpoints-on.png dia_mainpoints_off_icon ./pixmaps/mainpoints-off.png dia_diagram_icon ./pixmaps/dia-diagram.png dia_app_icon ./pixmaps/dia-app.png dia_objects_layer_above ./pixmaps/objects-layer-above.png dia_objects_layer_below ./pixmaps/objects-layer-below.png dia_layers ./pixmaps/layers.png dia_layer_add ./pixmaps/layer-add.png dia_layer_rename ./pixmaps/layer-rename.png dia_cursor_create ./pixmaps/cursor-create.png dia_cursor_hand_open ./pixmaps/cursor-hand-open.png dia_cursor_hand_closed ./pixmaps/cursor-hand-closed.png dia_cursor_magnify_minus ./pixmaps/cursor-magnify-minus.png dia_cursor_magnify_plus ./pixmaps/cursor-magnify-plus.png > dia-app-icons.h
+make  all-recursive
+make[3]: Entering directory '/home/kiwamu/src/dia/app'
+Making all in pixmaps
+make[4]: Entering directory '/home/kiwamu/src/dia/app/pixmaps'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/app/pixmaps'
+make[4]: Entering directory '/home/kiwamu/src/dia/app'
+  CC       confirm.o
+  CC       exit_dialog.o
+  CC       diagram.o
+  CC       preferences.o
+  CC       load_save.o
+  CC       properties-dialog.o
+  CC       defaults.o
+  CC       undo.o
+  CC       object_ops.o
+  CC       layer_dialog.o
+  CC       commands.o
+  CC       app_procs.o
+  CC       connectionpoint_ops.o
+  CC       disp_callbacks.o
+  CC       display.o
+  CC       select.o
+  CC       color_area.o
+  CC       linewidth_area.o
+  CC       grid.o
+  CC       handle_ops.o
+  CC       interface.o
+  CC       toolbox.o
+  CC       modify_tool.o
+  CC       scroll_tool.o
+  CC       create_object.o
+  CC       magnify.o
+  CC       menus.o
+  CC       cut_n_paste.o
+  CC       render_gdk.o
+  CC       ruler.o
+  CC       tool.o
+  CC       diapagelayout.o
+  CC       pagesetup.o
+  CC       filedlg.o
+  CC       find-and-replace.o
+  CC       plugin-manager.o
+  CC       dia-props.o
+  CC       gtkwrapbox.o
+  CC       gtkhwrapbox.o
+  CC       gtkvwrapbox.o
+  CC       cursor.o
+  CC       splash.o
+  CC       recent_files.o
+  CC       dia-application.o
+  CC       diagram_tree_model.o
+  CC       diagram_tree_view.o
+  CC       sheets.o
+  CC       sheets_dialog.o
+  CC       sheets_dialog_callbacks.o
+  CC       autosave.o
+  CC       dynamic_refresh.o
+  CC       navigation.o
+  CC       highlight.o
+  CC       textedit.o
+  CC       textedit_tool.o
+  CC       main.o
+  CCLD     dia
+echo "#!/bin/bash " > run_dia.sh
+echo DIA_APP_PATH=\"`pwd`\" >>run_dia.sh
+echo DIA_BASE_PATH=\"'$DIA_APP_PATH'/..\" >>run_dia.sh
+echo DIA_LIBS_PATH=\"'$DIA_APP_PATH'/.libs\" >>run_dia.sh
+echo >> run_dia.sh
+echo DIA_LIB_PATH=\"'$DIA_BASE_PATH'/objects//:'$DIA_BASE_PATH'/plug-ins//\" >> run_dia.sh
+echo DIA_PLUGIN_PATH=\"'$DIA_BASE_PATH'/plug-ins\" >> run_dia.sh
+echo DIA_SHAPE_PATH=\"'$DIA_BASE_PATH'/shapes\" >> run_dia.sh
+echo DIA_INT_SHAPE_PATH=\"'$DIA_BASE_PATH'/objects\" >> run_dia.sh
+echo DIA_SHEET_PATH=\"'$DIA_BASE_PATH'/sheets\" >> run_dia.sh
+echo DIA_PYTHON_PATH=\"'$DIA_BASE_PATH'/plug-ins/python\" >> run_dia.sh
+echo DIA_XSLT_PATH=\"'$DIA_BASE_PATH'/plug-ins/xslt\" >> run_dia.sh
+echo >> run_dia.sh
+echo "export DIA_BASE_PATH DIA_LIB_PATH DIA_SHAPE_PATH DIA_INT_SHAPE_PATH DIA_SHEET_PATH DIA_PLUGIN_PATH DIA_PYTHON_PATH DIA_XSLT_PATH" >> run_dia.sh
+echo "if [ \"x\$DEBUGGER\" != \"x\" ] ; then " >> run_dia.sh
+echo "  if [ ! -f \"\$DIA_LIBS_PATH/lt-dia\" -o \"\$DIA_LIBS_PATH/lt-dia\" -ot \"\$DIA_LIBS_PATH/dia\" ] ; then" >> run_dia.sh
+echo "    echo \"libtool relink stage necessary before debugging is possible.\"" >> run_dia.sh
+echo "    echo \"please run \$0 once without a debugger.\"" >> run_dia.sh
+echo "    exit 1" >> run_dia.sh
+echo "  fi" >> run_dia.sh
+echo "   \$DEBUGGER \"\$DIA_LIBS_PATH/lt-dia\" \"\$@\"" >> run_dia.sh
+echo "else" >> run_dia.sh
+echo "   \"\$DIA_APP_PATH/dia\" \"\$@\"" >> run_dia.sh
+echo "fi" >> run_dia.sh
+chmod a+x run_dia.sh
+make[4]: Leaving directory '/home/kiwamu/src/dia/app'
+make[3]: Leaving directory '/home/kiwamu/src/dia/app'
+make[2]: Leaving directory '/home/kiwamu/src/dia/app'
+Making all in bindings
+make[2]: Entering directory '/home/kiwamu/src/dia/bindings'
+make  all-am
+make[3]: Entering directory '/home/kiwamu/src/dia/bindings'
+  CXX      _dia_la-dia-connections.lo
+  CXX      _dia_la-dia-properties.lo
+  CXX      _dia_la-dia-object.lo
+  CXX      _dia_la-dia-renderer.lo
+  CXX      _dia_la-dia-diagramdata.lo
+  CXX      _dia_la-dia-extra.lo
+  CXXLD    _dia.la
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[3]: Leaving directory '/home/kiwamu/src/dia/bindings'
+make[2]: Leaving directory '/home/kiwamu/src/dia/bindings'
+Making all in samples
+make[2]: Entering directory '/home/kiwamu/src/dia/samples'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/kiwamu/src/dia/samples'
+Making all in po
+make[2]: Entering directory '/home/kiwamu/src/dia/po'
+  MSGFMT am.gmo
+  MSGFMT ar.gmo
+  MSGFMT ast.gmo
+  MSGFMT az.gmo
+  MSGFMT be.gmo
+  MSGFMT bg.gmo
+  MSGFMT bs.gmo
+  MSGFMT ca.gmo
+  MSGFMT ca@valencia.gmo
+  MSGFMT cs.gmo
+  MSGFMT da.gmo
+  MSGFMT de.gmo
+  MSGFMT dz.gmo
+  MSGFMT el.gmo
+  MSGFMT en_CA.gmo
+  MSGFMT en_GB.gmo
+  MSGFMT eo.gmo
+  MSGFMT es.gmo
+  MSGFMT eu.gmo
+  MSGFMT fi.gmo
+  MSGFMT fr.gmo
+  MSGFMT ga.gmo
+  MSGFMT gl.gmo
+  MSGFMT gu.gmo
+  MSGFMT he.gmo
+  MSGFMT hr.gmo
+  MSGFMT hu.gmo
+  MSGFMT id.gmo
+  MSGFMT is.gmo
+  MSGFMT it.gmo
+  MSGFMT ja.gmo
+  MSGFMT kk.gmo
+  MSGFMT kn.gmo
+  MSGFMT ko.gmo
+  MSGFMT lt.gmo
+  MSGFMT lv.gmo
+  MSGFMT mk.gmo
+  MSGFMT ml.gmo
+  MSGFMT mn.gmo
+  MSGFMT mr.gmo
+  MSGFMT ms.gmo
+  MSGFMT nb.gmo
+  MSGFMT ne.gmo
+  MSGFMT nl.gmo
+  MSGFMT nn.gmo
+  MSGFMT oc.gmo
+  MSGFMT pa.gmo
+  MSGFMT pl.gmo
+  MSGFMT pt.gmo
+  MSGFMT pt_BR.gmo
+  MSGFMT ro.gmo
+  MSGFMT ru.gmo
+  MSGFMT rw.gmo
+  MSGFMT sk.gmo
+  MSGFMT sl.gmo
+  MSGFMT sq.gmo
+  MSGFMT sr.gmo
+  MSGFMT sr@latin.gmo
+  MSGFMT sv.gmo
+  MSGFMT th.gmo
+  MSGFMT tr.gmo
+  MSGFMT uk.gmo
+  MSGFMT vi.gmo
+  MSGFMT zh_CN.gmo
+  MSGFMT zh_HK.gmo
+  MSGFMT zh_TW.gmo
+make[2]: Leaving directory '/home/kiwamu/src/dia/po'
+Making all in sheets
+make[2]: Entering directory '/home/kiwamu/src/dia/sheets'
+Making all in UML
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/UML'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/UML'
+Making all in ER
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/ER'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/ER'
+Making all in GRAFCET
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/GRAFCET'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/GRAFCET'
+Making all in Jackson
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/Jackson'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/Jackson'
+Making all in Istar
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/Istar'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/Istar'
+Making all in KAOS
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets/KAOS'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets/KAOS'
+make[3]: Entering directory '/home/kiwamu/src/dia/sheets'
+/usr/bin/intltool-merge ../po UML.sheet.in UML.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Generating and caching the translation database
+Merging translations into UML.sheet.
+CREATED UML.sheet
+/usr/bin/intltool-merge ../po ER.sheet.in ER.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ER.sheet.
+CREATED ER.sheet
+/usr/bin/intltool-merge ../po sybase.sheet.in sybase.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into sybase.sheet.
+CREATED sybase.sheet
+/usr/bin/intltool-merge ../po FS.sheet.in FS.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into FS.sheet.
+CREATED FS.sheet
+/usr/bin/intltool-merge ../po network.sheet.in network.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into network.sheet.
+CREATED network.sheet
+/usr/bin/intltool-merge ../po Flowchart.sheet.in Flowchart.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Flowchart.sheet.
+CREATED Flowchart.sheet
+/usr/bin/intltool-merge ../po Circuit.sheet.in Circuit.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Circuit.sheet.
+CREATED Circuit.sheet
+/usr/bin/intltool-merge ../po Contact.sheet.in Contact.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Contact.sheet.
+CREATED Contact.sheet
+/usr/bin/intltool-merge ../po GRAFCET.sheet.in GRAFCET.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into GRAFCET.sheet.
+CREATED GRAFCET.sheet
+/usr/bin/intltool-merge ../po chronogram.sheet.in chronogram.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into chronogram.sheet.
+CREATED chronogram.sheet
+/usr/bin/intltool-merge ../po SADT.sheet.in SADT.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into SADT.sheet.
+CREATED SADT.sheet
+/usr/bin/intltool-merge ../po Pneumatic.sheet.in Pneumatic.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Pneumatic.sheet.
+CREATED Pneumatic.sheet
+/usr/bin/intltool-merge ../po Electric.sheet.in Electric.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Electric.sheet.
+CREATED Electric.sheet
+/usr/bin/intltool-merge ../po civil.sheet.in civil.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into civil.sheet.
+CREATED civil.sheet
+/usr/bin/intltool-merge ../po jigsaw.sheet.in jigsaw.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into jigsaw.sheet.
+CREATED jigsaw.sheet
+/usr/bin/intltool-merge ../po MSE.sheet.in MSE.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into MSE.sheet.
+CREATED MSE.sheet
+/usr/bin/intltool-merge ../po SDL.sheet.in SDL.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into SDL.sheet.
+CREATED SDL.sheet
+/usr/bin/intltool-merge ../po Logic.sheet.in Logic.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Logic.sheet.
+CREATED Logic.sheet
+/usr/bin/intltool-merge ../po Misc.sheet.in Misc.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Misc.sheet.
+CREATED Misc.sheet
+/usr/bin/intltool-merge ../po Assorted.sheet.in Assorted.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Assorted.sheet.
+CREATED Assorted.sheet
+/usr/bin/intltool-merge ../po ciscocomputer.sheet.in ciscocomputer.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ciscocomputer.sheet.
+CREATED ciscocomputer.sheet
+/usr/bin/intltool-merge ../po ciscohub.sheet.in ciscohub.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ciscohub.sheet.
+CREATED ciscohub.sheet
+/usr/bin/intltool-merge ../po ciscomisc.sheet.in ciscomisc.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ciscomisc.sheet.
+CREATED ciscomisc.sheet
+/usr/bin/intltool-merge ../po cisconetwork.sheet.in cisconetwork.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into cisconetwork.sheet.
+CREATED cisconetwork.sheet
+/usr/bin/intltool-merge ../po ciscotelephony.sheet.in ciscotelephony.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ciscotelephony.sheet.
+CREATED ciscotelephony.sheet
+/usr/bin/intltool-merge ../po Cybernetics.sheet.in Cybernetics.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Cybernetics.sheet.
+CREATED Cybernetics.sheet
+/usr/bin/intltool-merge ../po IsometricMap.sheet.in IsometricMap.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into IsometricMap.sheet.
+CREATED IsometricMap.sheet
+/usr/bin/intltool-merge ../po Istar.sheet.in Istar.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Istar.sheet.
+CREATED Istar.sheet
+/usr/bin/intltool-merge ../po Jackson.sheet.in Jackson.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Jackson.sheet.
+CREATED Jackson.sheet
+/usr/bin/intltool-merge ../po KAOS.sheet.in KAOS.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into KAOS.sheet.
+CREATED KAOS.sheet
+/usr/bin/intltool-merge ../po ChemEng.sheet.in ChemEng.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into ChemEng.sheet.
+CREATED ChemEng.sheet
+/usr/bin/intltool-merge ../po AADL.sheet.in AADL.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into AADL.sheet.
+CREATED AADL.sheet
+/usr/bin/intltool-merge ../po Gane_and_Sarson.sheet.in Gane_and_Sarson.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Gane_and_Sarson.sheet.
+CREATED Gane_and_Sarson.sheet
+/usr/bin/intltool-merge ../po BPMN.sheet.in BPMN.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into BPMN.sheet.
+CREATED BPMN.sheet
+/usr/bin/intltool-merge ../po Lights.sheet.in Lights.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Lights.sheet.
+CREATED Lights.sheet
+/usr/bin/intltool-merge ../po Database.sheet.in Database.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Database.sheet.
+CREATED Database.sheet
+/usr/bin/intltool-merge ../po Sozi.sheet.in Sozi.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Sozi.sheet.
+CREATED Sozi.sheet
+/usr/bin/intltool-merge ../po Shape_Design.sheet.in Shape_Design.sheet -x -u \
+ 	-c ../po/.intltool-merge-cache
+Found cached translation database
+Merging translations into Shape_Design.sheet.
+CREATED Shape_Design.sheet
+(cd . && ./checktrans UML.sheet ER.sheet sybase.sheet FS.sheet network.sheet Flowchart.sheet Circuit.sheet Contact.sheet GRAFCET.sheet chronogram.sheet SADT.sheet Pneumatic.sheet Electric.sheet civil.sheet jigsaw.sheet MSE.sheet SDL.sheet Logic.sheet Misc.sheet Assorted.sheet ciscocomputer.sheet ciscohub.sheet ciscomisc.sheet cisconetwork.sheet ciscotelephony.sheet Cybernetics.sheet IsometricMap.sheet Istar.sheet Jackson.sheet KAOS.sheet ChemEng.sheet AADL.sheet Gane_and_Sarson.sheet BPMN.sheet Lights.sheet Database.sheet Sozi.sheet Shape_Design.sheet)
+*** Sheet translation report: ***
+(Absence of a language code means 0% translation for that language)
+(Help for translations (and/or much more) is of course welcome !)
+Missing dependencies: no translation report
+make[3]: Leaving directory '/home/kiwamu/src/dia/sheets'
+make[2]: Leaving directory '/home/kiwamu/src/dia/sheets'
+Making all in data
+make[2]: Entering directory '/home/kiwamu/src/dia/data'
+Making all in icons
+make[3]: Entering directory '/home/kiwamu/src/dia/data/icons'
+Making all in 16x16
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/16x16'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/16x16/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/16x16/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/16x16'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/16x16'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/16x16'
+Making all in 22x22
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/22x22'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/22x22/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/22x22/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/22x22'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/22x22'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/22x22'
+Making all in 24x24
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/24x24'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/24x24/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/24x24/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/24x24'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/24x24'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/24x24'
+Making all in 32x32
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/32x32'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/32x32/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/32x32/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/32x32'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/32x32'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/32x32'
+Making all in 48x48
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/48x48'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/48x48/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/48x48/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/48x48'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/48x48'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/48x48'
+Making all in scalable
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons/scalable'
+Making all in apps
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/scalable/apps'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/scalable/apps'
+make[5]: Entering directory '/home/kiwamu/src/dia/data/icons/scalable'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/data/icons/scalable'
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons/scalable'
+make[4]: Entering directory '/home/kiwamu/src/dia/data/icons'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/data/icons'
+make[3]: Leaving directory '/home/kiwamu/src/dia/data/icons'
+make[3]: Entering directory '/home/kiwamu/src/dia/data'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/data'
+make[2]: Leaving directory '/home/kiwamu/src/dia/data'
+Making all in doc
+make[2]: Entering directory '/home/kiwamu/src/dia/doc'
+Making all in en
+make[3]: Entering directory '/home/kiwamu/src/dia/doc/en'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc/en'
+Making all in fr
+make[3]: Entering directory '/home/kiwamu/src/dia/doc/fr'
+xsltproc --novalid http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl dia.dbk >dia.1
+Note: meta source : no *info/productname or alternative            dia
+Note: meta source : see http://docbook.sf.net/el/productname       dia
+Note: meta source : no refentry/refmeta/refmiscinfo@class=source   dia
+Note: meta source : see http://docbook.sf.net/el/refmiscinfo       dia
+Note: meta version: no *info/productnumber or alternative          dia
+Note: meta version: see http://docbook.sf.net/el/productnumber     dia
+Note: meta version: no refentry/refmeta/refmiscinfo@class=version  dia
+Note: meta version: see http://docbook.sf.net/el/refmiscinfo       dia
+Warn: meta source : no fallback for source, so inserted a fixme    dia
+Note: meta manual : no titled ancestor of refentry                 dia
+Note: meta manual : no refentry/refmeta/refmiscinfo@class=manual   dia
+Note: meta manual : see http://docbook.sf.net/el/refmiscinfo       dia
+Warn: meta manual : no fallback for manual, so inserted a fixme    dia
+Warn: AUTHOR sect.: no personblurb|contrib for Fredrik Hallenberg  dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       dia
+Warn: AUTHOR sect.: no personblurb|contrib for W\&. Borgert        dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       dia
+Warn: AUTHOR sect.: no personblurb|contrib for Alan Horkan         dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/contrib           dia
+Note: AUTHOR sect.: see http://docbook.sf.net/el/personblurb       dia
+Note: Writing dia.1
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc/fr'
+Making all in eu
+make[3]: Entering directory '/home/kiwamu/src/dia/doc/eu'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc/eu'
+Making all in pl
+make[3]: Entering directory '/home/kiwamu/src/dia/doc/pl'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc/pl'
+Making all in de
+make[3]: Entering directory '/home/kiwamu/src/dia/doc/de'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc/de'
+make[3]: Entering directory '/home/kiwamu/src/dia/doc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/doc'
+make[2]: Leaving directory '/home/kiwamu/src/dia/doc'
+Making all in tests
+make[2]: Entering directory '/home/kiwamu/src/dia/tests'
+Making all in exports
+make[3]: Entering directory '/home/kiwamu/src/dia/tests/exports'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/tests/exports'
+make[3]: Entering directory '/home/kiwamu/src/dia/tests'
+  CC       test-boundingbox.o
+  CCLD     boundingbox
+  CC       test-objects.o
+  CCLD     objects
+  CC       test-sizeof.o
+  CCLD     sizeof
+  CC       test-svg.o
+  CCLD     testsvg
+make[3]: Leaving directory '/home/kiwamu/src/dia/tests'
+make[2]: Leaving directory '/home/kiwamu/src/dia/tests'
+Making all in installer
+make[2]: Entering directory '/home/kiwamu/src/dia/installer'
+Making all in macosx
+make[3]: Entering directory '/home/kiwamu/src/dia/installer/macosx'
+Making all in Resources
+make[4]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources'
+Making all in etc
+make[5]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc'
+Making all in fonts
+make[6]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc/fonts'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc/fonts'
+make[6]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc'
+make[5]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/etc'
+Making all in themes
+make[5]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes'
+Making all in CL
+make[6]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL'
+Making all in gtk-2.0
+make[7]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0'
+Making all in Scrollbars
+make[8]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars'
+Making all in Scrollbars_1
+make[8]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars_1'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars_1'
+Making all in Scrollbars_6
+make[8]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars_6'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0/Scrollbars_6'
+make[8]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0'
+make[8]: Nothing to be done for 'all-am'.
+make[8]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0'
+make[7]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL/gtk-2.0'
+make[7]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL'
+make[7]: Nothing to be done for 'all-am'.
+make[7]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL'
+make[6]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes/CL'
+make[6]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes'
+make[6]: Nothing to be done for 'all-am'.
+make[6]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes'
+make[5]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources/themes'
+make[5]: Entering directory '/home/kiwamu/src/dia/installer/macosx/Resources'
+make[5]: Nothing to be done for 'all-am'.
+make[5]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources'
+make[4]: Leaving directory '/home/kiwamu/src/dia/installer/macosx/Resources'
+make[4]: Entering directory '/home/kiwamu/src/dia/installer/macosx'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/installer/macosx'
+make[3]: Leaving directory '/home/kiwamu/src/dia/installer/macosx'
+Making all in win32
+make[3]: Entering directory '/home/kiwamu/src/dia/installer/win32'
+Making all in locale
+make[4]: Entering directory '/home/kiwamu/src/dia/installer/win32/locale'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/installer/win32/locale'
+make[4]: Entering directory '/home/kiwamu/src/dia/installer/win32'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/kiwamu/src/dia/installer/win32'
+make[3]: Leaving directory '/home/kiwamu/src/dia/installer/win32'
+make[3]: Entering directory '/home/kiwamu/src/dia/installer'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/kiwamu/src/dia/installer'
+make[2]: Leaving directory '/home/kiwamu/src/dia/installer'
+make[2]: Entering directory '/home/kiwamu/src/dia'
+/usr/bin/intltool-merge ./po dia.desktop.in.in dia.desktop.in -d -u -c ./po/.intltool-merge-cachemake
+Generating and caching the translation database
+Merging translations into dia.desktop.in.
+sed -e 's/@VERSION/@'0.97+git'/;' < dia.desktop.in > dia.desktop
+(cd po ; make dia.pot)
+make[3]: Entering directory '/home/kiwamu/src/dia/po'
+INTLTOOL_EXTRACT="/usr/bin/intltool-extract" XGETTEXT="/usr/bin/xgettext" srcdir=. /usr/bin/intltool-update --gettext-package dia --pot
+make[3]: Leaving directory '/home/kiwamu/src/dia/po'
+if [ ! "." -ef "." ]; then    \
+  cp ./po-checktrans .;    \
+  cp ./po-checktrans.py .; \
+fi
+./po-checktrans po/dia.pot ./po/*.po
+*** PO/core/gettext translation report: ***
+(Absence of a language code means 0% translation for that language)
+(Help for translations (and/or much more) is of course welcome !)
+(A star after a language's statistics means that the translation file isn't
+ up to date with the POT (original messages) file)
+
+Entry format:
+   country_code percentage% (translated,fuzzy,total)
+
+translated includes fuzzy entries.
+
+am: 22%(538/288/2415)*          ko: 97%(2347/0/2415)*         
+ar: 84%(2031/762/2415)*         lt: 97%(2353/77/2415)         
+ast: 82%(1986/0/2415)*          lv: 94%(2282/0/2415)*         
+az: 60%(1470/745/2415)*         mk: 38%(922/618/2415)*        
+be: 45%(1102/470/2415)*         ml: 22%(538/314/2415)*        
+bg: 84%(2040/0/2415)*           mn: 11%(288/101/2415)*        
+bs:100%(2423/0/2415)            mr:  6%(149/0/2415)*          
+ca: 99%(2413/15/2415)           ms: 71%(1735/428/2415)*       
+ca@valencia: 93%(2268/4/2415)*  nb: 82%(1994/169/2415)*       
+cs:100%(2423/0/2415)            ne: 92%(2241/0/2415)*         
+da: 87%(2125/440/2415)*         nl: 78%(1887/276/2415)*       
+de: 99%(2400/24/2415)           nn: 55%(1347/931/2415)*       
+dz: 84%(2040/0/2415)*           oc: 92%(2224/200/2415)        
+el:100%(2423/0/2415)            pa: 21%(509/0/2415)*          
+en_CA: 82%(1989/54/2415)*       pl: 81%(1971/357/2415)        
+en_GB: 98%(2375/0/2415)*        pt_BR:100%(2423/0/2415)       
+eo: 19%(478/0/2415)*            pt:100%(2423/0/2415)          
+es:100%(2423/1/2415)            ro: 92%(2229/0/2415)*         
+eu: 98%(2368/30/2415)*          ru: 96%(2334/159/2415)*       
+fi: 92%(2238/378/2415)          rw: 49%(1188/952/2415)*       
+fr: 93%(2246/92/2415)*          sk: 95%(2300/0/2415)*         
+ga: 14%(346/125/2415)*          sl: 94%(2285/0/2415)*         
+gl: 92%(2235/185/2415)*         sq: 54%(1318/1046/2415)*      
+gu: 44%(1065/41/2415)*          sr@latin:100%(2423/0/2415)    
+he: 27%(654/1/2415)*            sr:100%(2423/0/2415)          
+hr: 73%(1786/371/2415)*         sv:100%(2423/0/2415)          
+hu:100%(2423/0/2415)            th: 18%(445/15/2415)*         
+id:100%(2423/0/2415)            tr: 64%(1565/988/2415)*       
+is: 38%(936/43/2415)            uk: 98%(2378/0/2415)*         
+it: 85%(2071/493/2415)*         vi: 92%(2232/0/2415)*         
+ja: 91%(2218/129/2415)*         zh_CN: 94%(2275/2/2415)*      
+kk: 12%(303/0/2415)             zh_HK: 90%(2191/4/2415)*      
+kn: 29%(707/5/2415)*            zh_TW: 90%(2191/4/2415)*      
+if [ ! "." -ef "." ]; then    \
+  rm -f ./po-checktrans ./po-checktrans.py; \
+fi
+make[2]: Leaving directory '/home/kiwamu/src/dia'
+make[1]: Leaving directory '/home/kiwamu/src/dia'
+Starting analysis (Infer version v0.9.4-e757d92)
+
+legend:
+  "F" analyzing a file
+  "." analyzing a procedure
+
+F.F.F......F.........................................................................F.......F...F......................................................................................................F.F..........F....F.....F.........................................................................F............F....................F..................................................F...............................F.................F...........................................F.F......F.....................................................................................................................................................F..............................F......................................F...................................................................................F...............................................F..................F...............................................F...........F..F...F........F.............................F......F....................................F........F..........................F.F.................................................F...............F................................................F......F.............F.....................F......F...........F...........................F.............F..................................F..........................F..F................................................F..............................................................................F..............F.............................F................................F..........F......................F.......F..........................................................F.......F.............F.F...........................F.....................F.....................................................F..................................F.........................F..F...........F....................................................................F...............F..............................F.............F.....................F.......................................F............F...F.............F.......F........................F.F..........................................................................................................................F....F................................F......................F........................................F....................................F...................................F.F............F...F......F.....................F........F.....F....F......................................F........F....F.........F..........F.F...........F.....F..............F............F................................F....F..........................F...F......F............................................F............................................F.................F........F.........F......................................F.F.............................................................F.........................F...........................F............................................F...................................................F............F.F..........................F......................................................FF.......F..................F.................F....F..........F....................................F.........................F.....................................F.F.................F........F............F.......F...........F............................F..................................................................................F..F.......................F............F........................F...........F..............F......................FF...........FF.......................F...........F.................................F.....F..........................................F...F..........................F.......F.............................FF..F...F.......................F........F..................................F...........F......................F............F..............F.F.....................................................FF.........F..................FF.............F....................F..............................................................F.........F......F.................F.....................................F...F..FF..........................F.F...............F......................F..F.....F......F.......................F............F..........................F........................F.............F............F.F.......................F...F..F.....................................F................................F.......................................F...F.....................F..................................F....................................................................F............F......F...F.F...........FF.............F...........................................F.............F............................................................................F.............................................F..F.....................F..F...............................F............F..F....F...F.............F...........F......F.................F.....................FF................F.F......................................................F...F............................................F......F........................F.F.......................F......FF..FF............................F............................F......................................F.F......................................F.........F....F............F...F............F.........F........................................F........................F..F.......F.................F............................FF...F.....................................F...F..F..........................FF........................F...................F..........F.F............F........F.......F....F.......F.F...........F........................F....................................F.F....F.............................F.............F...................................F....F...............................F.................F....F................F..................F......................F............F....F......................FF................F..................F...F...................F.F...................................................................FF....................F.................F....FF.....F..F.F.F.............F....F...........F.................F....................F.....................F...........F........F....F.............F...F.....................F..........F............................F.F.....................F............F..........F...F...........F.................................................................F......F...............F......................................F.........F....F...............F.................F.F...............F.........F..........................F...................................................
+Analyzed 352 files
+
+Found 37 issues
+
+lib/object-alias.c:142: error: NULL_DEREFERENCE
+  pointer real_type last assigned on line 135 could be null and is dereferenced at line 142, column 11
+  140.        * just another reason to pass in the exlplicit this-pointer in every method.
+  141.        */
+  142. >     obj = real_type->ops->create (&apoint, real_type->default_user_data, &h1, &h2);
+  143.       object_load_props (obj, obj_node, ctx);
+  144.   #ifdef MODIFY_OBJECTS_TYPE
+  145.   
+
+lib/prop_sdarray_widget.c:415: error: PREMATURE_NIL_TERMINATION_ARGUMENT
+  pointer i last assigned on line 396 could be null which results in a call to gtk_tree_view_column_new_with_attributes() with 3 arguments instead of 4 (null indicates that the last argument of this variadic function has been reached) at line 415, column 13
+  413.         renderer = (_dia_gtk_type_map[idx].create_renderer) (p, view);
+  414.         g_object_set_data (G_OBJECT (renderer), COLUMN_KEY, GINT_TO_POINTER (i));
+  415. >       col = gtk_tree_view_column_new_with_attributes (
+  416.   		p->descr->description, renderer,
+  417.   		_dia_gtk_type_map[idx].bind, i,
+  418.   
+
+objects/AADL/aadlbox.c:613: error: NULL_DEREFERENCE
+  pointer aadlbox->connections last assigned on line 608 could be null and is dereferenced at line 613, column 3
+  611.     i = aadlbox->num_connections - 1;
+  612.   
+  613. >   aadlbox->connections[i] = connection;
+  614.     aadlbox->connections[i]->pos = *p;
+  615.     
+  616.   
+
+objects/AADL/aadlbox.c:490: error: NULL_DEREFERENCE
+  pointer aadlbox->ports last assigned on line 485 could be null and is dereferenced at line 490, column 3
+  488.     i = aadlbox->num_ports - 1;
+  489.   
+  490. >   aadlbox->ports[i] = port;
+  491.     aadlbox->ports[i]->handle->id = PORT_HANDLE_AADLBOX;
+  492.     aadlbox->ports[i]->handle->type = HANDLE_MINOR_CONTROL;
+  493.   
+
+lib/poly_conn.c:194: error: NULL_DEREFERENCE
+  pointer poly->points last assigned on line 191 could be null and is dereferenced at line 194, column 23
+  192.   
+  193.     for (i=poly->numpoints-1; i > pos; i--) {
+  194. >     poly->points[i] = poly->points[i-1];
+  195.     }
+  196.     poly->points[pos] = *point;
+  197.   
+
+lib/polyshape.c:166: error: NULL_DEREFERENCE
+  pointer poly->points last assigned on line 163 could be null and is dereferenced at line 166, column 23
+  164.   
+  165.     for (i=poly->numpoints-1; i > pos; i--) {
+  166. >     poly->points[i] = poly->points[i-1];
+  167.     }
+  168.     poly->points[pos] = *point;
+  169.   
+
+lib/orth_conn.c:886: error: NULL_DEREFERENCE
+  pointer orth->points last assigned on line 884 could be null and is dereferenced at line 886, column 23
+  884.     orth->points = g_realloc(orth->points, orth->numpoints*sizeof(Point));
+  885.     for (i=orth->numpoints-1;i>pos;i--) {
+  886. >     orth->points[i] = orth->points[i-1];
+  887.     }
+  888.     orth->points[pos] = *point;
+  889.   
+
+lib/diarenderer.c:778: error: NULL_DEREFERENCE
+  pointer bezier->points last assigned on line 774 could be null and is dereferenced at line 778, column 3
+  776.     }
+  777.     
+  778. >   bezier->points[bezier->currpoint] = *point;
+  779.     
+  780.     bezier->currpoint++;
+  781.   
+
+objects/network/bus.c:504: error: NULL_DEREFERENCE
+  pointer bus->handles last assigned on line 497 could be null and is dereferenced at line 504, column 3
+  502.     i = bus->num_handles - 1;
+  503.     
+  504. >   bus->handles[i] = handle;
+  505.     bus->handles[i]->id = HANDLE_BUS;
+  506.     bus->handles[i]->type = HANDLE_MINOR_CONTROL;
+  507.   
+
+app/sheets_dialog_callbacks.c:1586: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 1577, column 17 is not released after line 1586, column 19
+  1584.     if ((fp_dst = g_fopen(dst, "wb")) == NULL)
+  1585.     {
+  1586. >     message_error(_("Couldn't open '%s': %s"), 
+  1587.   		  dia_message_filename(dst), strerror(errno));
+  1588.       return FALSE;
+  1589.   
+
+lib/prop_pixbuf.c:138: error: NULL_DEREFERENCE
+  pointer node last assigned on line 130 could be null and is dereferenced at line 138, column 9
+  136.       gssize len = 0;
+  137.   
+  138. >     if (node->children && xmlStrcmp (node->children->name, (const xmlChar*)"text") == 0) {
+  139.         in = (gchar *)node->children->content;
+  140.         len = strlen ((char *)in);
+  141.   
+
+app/layer_dialog.c:1136: error: NULL_DEREFERENCE
+  pointer dia last assigned on line 1134 could be null and is dereferenced at line 1136, column 35
+  1134.     Diagram *dia = ddisplay_active_diagram();
+  1135.     Layer *layer;
+  1136. >   int pos = data_layer_get_index (dia->data, dia->data->active_layer) + 1;
+  1137.     
+  1138.     layer = new_layer(g_strdup (gtk_entry_get_text (GTK_ENTRY (dialog->name_entry))), dia->data);
+  1139.   
+
+app/layer_dialog.c:1162: error: NULL_DEREFERENCE
+  pointer dia last assigned on line 1161 could be null and is dereferenced at line 1162, column 18
+  1160.     EditLayerDialog *dialog = (EditLayerDialog *) client_data;
+  1161.     Diagram *dia = ddisplay_active_diagram();
+  1162. >   Layer *layer = dia->data->active_layer;
+  1163.     
+  1164.     g_free (layer->name);
+  1165.   
+
+plug-ins/xfig/xfig-import.c:277: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 268 could be null and is dereferenced by call to setlocale() at line 277, column 5
+  275.   	return NULL;
+  276.       }
+  277. >     setlocale(LC_NUMERIC,old_locale);
+  278.   
+  279.       arrow = g_new(Arrow, 1);
+  280.   
+
+plug-ins/xfig/xfig-import.c:274: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 268 could be null and is dereferenced by call to setlocale() at line 274, column 2
+  272.   	       &width, &height) != 5) {
+  273.   	dia_context_add_message(ctx, _("Error while reading arrowhead"));
+  274. > 	setlocale(LC_NUMERIC,old_locale);
+  275.   	return NULL;
+  276.       }
+  277.   
+
+plug-ins/xfig/xfig-import.c:439: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 418 could be null and is dereferenced by call to setlocale() at line 439, column 5
+  437.   	return NULL;
+  438.       }
+  439. >     setlocale(LC_NUMERIC, old_locale);
+  440.       
+  441.       /* Curiously, the sub_type doesn't matter, as all info can be
+  442.   
+
+plug-ins/xfig/xfig-import.c:436: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 418 could be null and is dereferenced by call to setlocale() at line 436, column 2
+  434.   	       &end_x, &end_y) < 19) {
+  435.   	dia_context_add_message_with_errno(ctx, errno, _("Couldn't read ellipse info."));
+  436. > 	setlocale(LC_NUMERIC, old_locale);
+  437.   	return NULL;
+  438.       }
+  439.   
+
+plug-ins/xfig/xfig-import.c:1221: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 1218 could be null and is dereferenced by call to setlocale() at line 1221, column 6
+  1219.   	if (fscanf(file, "%lf\n", &mag) != 1) {
+  1220.   	    dia_context_add_message_with_errno(ctx, errno, _("Error reading magnification."));
+  1221. > 	    setlocale(LC_NUMERIC, old_locale);
+  1222.   	    return FALSE;
+  1223.   	}
+  1224.   
+
+plug-ins/xfig/xfig-import.c:355: error: NULL_DEREFERENCE
+  pointer text_buf last assigned on line 358 could be null and is dereferenced by call to strlen() at line 355, column 6
+  353.       text_len = 0;
+  354.       while (fgets(text_buf+text_len, text_alloc-text_len, file) != NULL) {
+  355. > 	if (strlen(text_buf) < text_alloc-1) break;
+  356.   	text_len = text_alloc;
+  357.   	text_alloc *= 2;
+  358.   
+
+plug-ins/xfig/xfig-import.c:969: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 954 could be null and is dereferenced by call to setlocale() at line 969, column 2
+  967.   	       &y) != 12) {
+  968.   	dia_context_add_message_with_errno(ctx, errno, _("Couldn't read text info."));
+  969. > 	setlocale(LC_NUMERIC, old_locale);
+  970.   	return NULL;
+  971.       }
+  972.   
+
+lib/orth_conn.c:905: error: NULL_DEREFERENCE
+  pointer orth->handles last assigned on line 902 could be null and is dereferenced at line 905, column 24
+  903.   			  (orth->numpoints-1)*sizeof(Handle *));
+  904.     for (i=orth->numpoints-2;i>segment;i--) {
+  905. >     orth->handles[i] = orth->handles[i-1];
+  906.       orth->orientation[i] = orth->orientation[i-1];
+  907.     }
+  908.   
+
+lib/object.c:643: error: NULL_DEREFERENCE
+  pointer obj->connections last assigned on line 638 could be null and is dereferenced at line 643, column 27
+  641.   
+  642.     for (i=obj->num_connections-1; i > pos; i--) {
+  643. >     obj->connections[i] = obj->connections[i-1];
+  644.     }
+  645.     obj->connections[pos] = conpoint;
+  646.   
+
+lib/persistence.c:993: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 991 could be null and is dereferenced at line 993, column 18
+  991.     PersistentList *plist = persistent_list_get(role);
+  992.   
+  993. >   g_list_foreach(plist->glist, (GFunc)g_free, NULL);
+  994.     g_list_free(plist->glist);
+  995.     plist->glist = NULL;
+  996.   
+
+lib/persistence.c:935: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 933 could be null and is dereferenced at line 935, column 37
+  933.     PersistentList *plist = persistent_list_get(role);
+  934.     /* Leaking data?  See not in persistent_list_add */
+  935. >   GList *entry = g_list_find_custom(plist->glist, item, (GCompareFunc)g_ascii_strcasecmp);
+  936.     if (entry != NULL) {
+  937.       plist->glist = g_list_remove_link(plist->glist, entry);
+  938.   
+
+lib/persistence.c:947: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 946 could be null and is dereferenced at line 947, column 30
+  945.   {
+  946.     PersistentList *plist = persistent_list_get(role);
+  947. >   persistent_list_cut_length(plist->glist, 0);
+  948.     plist->glist = NULL;
+  949.   }
+  950.   
+
+lib/persistence.c:920: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 919 could be null and is dereferenced at line 920, column 3
+  918.   {
+  919.     PersistentList *plist = persistent_list_get(role);
+  920. >   plist->max_members = max;
+  921.     plist->glist = persistent_list_cut_length(plist->glist, max);
+  922.   }
+  923.   
+
+lib/poly_conn.c:258: error: MEMORY_LEAK
+   memory dynamically allocated to new_handle by call to g_malloc() at line 255, column 16 is not reachable after line 258, column 3
+  256.     setup_handle(new_handle, PC_HANDLE_CORNER);
+  257.     add_handle(poly, segment+1, &realpoint, new_handle);
+  258. >   return polyconn_create_change(poly, TYPE_ADD_POINT,
+  259.   				&realpoint, segment+1, new_handle,
+  260.   				NULL);
+  261.   
+
+lib/boundingbox.c:289: error: NULL_DEREFERENCE
+  pointer bpts last assigned on line 287 could be null and is dereferenced at line 289, column 3
+  287.     BezPoint *bpts = alloc_polybezier_space(numpoints + 1);
+  288.   
+  289. >   bpts[0].type = BEZ_MOVE_TO;
+  290.     bpts[0].p1 = pts[0];
+  291.   
+  292.   
+
+objects/AADL/edit_port_declaration.c:90: error: NULL_DEREFERENCE
+  pointer text last assigned on line 89 could be null and is dereferenced by call to strcpy() at line 90, column 3
+  88.   {
+  89.     text = (gchar *) g_malloc (strlen(gtk_entry_get_text (GTK_ENTRY (entry)))+1);
+  90. >   strcpy(text, gtk_entry_get_text (GTK_ENTRY (entry)));
+  91.   }
+  92.   
+  93.   
+
+lib/text.c:122: error: NULL_DEREFERENCE
+  pointer text->lines last assigned on line 119 could be null and is dereferenced at line 122, column 22
+  120.   
+  121.     for (i = text->numlines - 1; i > line_no; i--) {
+  122. >     text->lines[i] = text->lines[i - 1];
+  123.     }
+  124.     text->lines[line_no] = text_line_new("", text->font, text->height);;
+  125.   
+
+objects/Misc/tree.c:504: error: NULL_DEREFERENCE
+  pointer tree->handles last assigned on line 497 could be null and is dereferenced at line 504, column 3
+  502.     i = tree->num_handles - 1;
+  503.     
+  504. >   tree->handles[i] = handle;
+  505.     tree->handles[i]->id = HANDLE_BUS;
+  506.     tree->handles[i]->type = HANDLE_MINOR_CONTROL;
+  507.   
+
+plug-ins/vdx/vdx-export.c:1455: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1455, column 13
+  1453.           case '\"':
+  1454.           case '\'':
+  1455. >             strcpy(c, "&quot;"); c += 6;
+  1456.               break;
+  1457.           default:
+  1458.   
+
+plug-ins/vdx/vdx-export.c:1451: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1451, column 13
+  1449.               break;
+  1450.           case '>':
+  1451. >             strcpy(c, "&gt;"); c += 4;
+  1452.               break;
+  1453.           case '\"':
+  1454.   
+
+plug-ins/vdx/vdx-export.c:1448: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1448, column 13
+  1446.               break;
+  1447.           case '<':
+  1448. >             strcpy(c, "&lt;"); c += 4;
+  1449.               break;
+  1450.           case '>':
+  1451.   
+
+plug-ins/vdx/vdx-export.c:1445: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1445, column 13
+  1443.           {
+  1444.           case '&':
+  1445. >             strcpy(c, "&amp;"); c += 5;
+  1446.               break;
+  1447.           case '<':
+  1448.   
+
+plug-ins/xslt/xslt.c:157: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 94, column 9 is not released after line 157, column 17
+  155.   	err = xsltSaveResultToFile(out, doc, codestyle);
+  156.   	if(err < 0) {
+  157. > 		message_error(_("Error while saving result: %s\n"), 
+  158.   			      dia_message_filename(filename));
+  159.   		return;
+  160.   
+
+plug-ins/xslt/xslt.c:105: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 94, column 9 is not released after line 105, column 18
+  103.   	
+  104.   	if (out == NULL) {
+  105. > 	  message_error(_("Can't open output file %s: %s\n"), 
+  106.   			dia_message_filename(filename), strerror(errno));
+  107.   	  return;
+  108.   
+
+Summary of the reports
+
+                    NULL_DEREFERENCE: 32
+                       RESOURCE_LEAK: 3
+  PREMATURE_NIL_TERMINATION_ARGUMENT: 1
+                         MEMORY_LEAK: 1
