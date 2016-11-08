@@ -1,3 +1,13 @@
+=== 総括
+
+結局、DiaにおけるInferの誤認識(false positive)は以下に分類できる:
+
+A. g_malloc()やg_realloc()がNULLを返すと誤認している
+B. setlocale(3)にNULLを渡せないと誤認している
+C. 関数Aで確保したメモリチャンクを関数Bを呼び出して包んでポインタで関数Aが返す
+
+Cの誤認識は検査しずらいか。。。
+
 === objects/AADL/aadlbox.c:613: error: NULL_DEREFERENCE
   pointer aadlbox->connections last assigned on line 608 could be null and is dereferenced at line 613, column 3
   611.     i = aadlbox->num_connections - 1;
