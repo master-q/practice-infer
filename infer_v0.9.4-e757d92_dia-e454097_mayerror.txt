@@ -1,0 +1,194 @@
+=== lib/object-alias.c:142: error: NULL_DEREFERENCE
+  pointer real_type last assigned on line 135 could be null and is dereferenced at line 142, column 11
+  140.        * just another reason to pass in the exlplicit this-pointer in every method.
+  141.        */
+  142. >     obj = real_type->ops->create (&apoint, real_type->default_user_data, &h1, &h2);
+  143.       object_load_props (obj, obj_node, ctx);
+  144.   #ifdef MODIFY_OBJECTS_TYPE
+  145.   
+
+`real_type` is return value of function `_alias_lookup()` that may return NULL.
+
+=== lib/prop_sdarray_widget.c:415: error: PREMATURE_NIL_TERMINATION_ARGUMENT
+  pointer i last assigned on line 396 could be null which results in a call to gtk_tree_view_column_new_with_attributes() with 3 arguments instead of 4 (null indicates that the last argument of this variadic function has been reached) at line 415, column 13
+  413.         renderer = (_dia_gtk_type_map[idx].create_renderer) (p, view);
+  414.         g_object_set_data (G_OBJECT (renderer), COLUMN_KEY, GINT_TO_POINTER (i));
+  415. >       col = gtk_tree_view_column_new_with_attributes (
+  416.   		p->descr->description, renderer,
+  417.   		_dia_gtk_type_map[idx].bind, i,
+  418.   
+
+Function `gtk_tree_view_column_new_with_attributes()` has following interface:
+
+#define G_GNUC_NULL_TERMINATED __attribute__((__sentinel__))
+GtkTreeViewColumn *gtk_tree_view_column_new_with_attributes (
+  const gchar *title,
+  GtkCellRenderer         *cell,
+  ...) G_GNUC_NULL_TERMINATED;
+
+But line 415 may have `i = 0` that causes miss-terminate.
+
+=== app/sheets_dialog_callbacks.c:1586: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 1577, column 17 is not released after line 1586, column 19
+  1584.     if ((fp_dst = g_fopen(dst, "wb")) == NULL)
+  1585.     {
+  1586. >     message_error(_("Couldn't open '%s': %s"), 
+  1587.   		  dia_message_filename(dst), strerror(errno));
+  1588.       return FALSE;
+  1589.   
+
+`fp_src` leaks.
+
+=== lib/prop_pixbuf.c:138: error: NULL_DEREFERENCE
+  pointer node last assigned on line 130 could be null and is dereferenced at line 138, column 9
+  136.       gssize len = 0;
+  137.   
+  138. >     if (node->children && xmlStrcmp (node->children->name, (const xmlChar*)"text") == 0) {
+  139.         in = (gchar *)node->children->content;
+  140.         len = strlen ((char *)in);
+  141.   
+
+`node` is introduced by function `attribute_first_data()` that may return NULL.
+
+=== app/layer_dialog.c:1136: error: NULL_DEREFERENCE
+  pointer dia last assigned on line 1134 could be null and is dereferenced at line 1136, column 35
+  1134.     Diagram *dia = ddisplay_active_diagram();
+  1135.     Layer *layer;
+  1136. >   int pos = data_layer_get_index (dia->data, dia->data->active_layer) + 1;
+  1137.     
+  1138.     layer = new_layer(g_strdup (gtk_entry_get_text (GTK_ENTRY (dialog->name_entry))), dia->data);
+  1139.   
+
+If DDisplay has not been initialized, `dia` is NULL.
+
+=== app/layer_dialog.c:1162: error: NULL_DEREFERENCE
+  pointer dia last assigned on line 1161 could be null and is dereferenced at line 1162, column 18
+  1160.     EditLayerDialog *dialog = (EditLayerDialog *) client_data;
+  1161.     Diagram *dia = ddisplay_active_diagram();
+  1162. >   Layer *layer = dia->data->active_layer;
+  1163.     
+  1164.     g_free (layer->name);
+  1165.   
+
+If DDisplay has not been initialized, `dia` is NULL.
+
+=== lib/persistence.c:993: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 991 could be null and is dereferenced at line 993, column 18
+  991.     PersistentList *plist = persistent_list_get(role);
+  992.   
+  993. >   g_list_foreach(plist->glist, (GFunc)g_free, NULL);
+  994.     g_list_free(plist->glist);
+  995.     plist->glist = NULL;
+  996.   
+
+`plist` is introduced by function `persistent_list_get()` that may return NULL.
+
+=== lib/persistence.c:935: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 933 could be null and is dereferenced at line 935, column 37
+  933.     PersistentList *plist = persistent_list_get(role);
+  934.     /* Leaking data?  See not in persistent_list_add */
+  935. >   GList *entry = g_list_find_custom(plist->glist, item, (GCompareFunc)g_ascii_strcasecmp);
+  936.     if (entry != NULL) {
+  937.       plist->glist = g_list_remove_link(plist->glist, entry);
+  938.   
+
+`plist` is introduced by function `persistent_list_get()` that may return NULL.
+
+=== lib/persistence.c:947: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 946 could be null and is dereferenced at line 947, column 30
+  945.   {
+  946.     PersistentList *plist = persistent_list_get(role);
+  947. >   persistent_list_cut_length(plist->glist, 0);
+  948.     plist->glist = NULL;
+  949.   }
+  950.   
+
+`plist` is introduced by function `persistent_list_get()` that may return NULL.
+
+=== lib/persistence.c:920: error: NULL_DEREFERENCE
+  pointer plist last assigned on line 919 could be null and is dereferenced at line 920, column 3
+  918.   {
+  919.     PersistentList *plist = persistent_list_get(role);
+  920. >   plist->max_members = max;
+  921.     plist->glist = persistent_list_cut_length(plist->glist, max);
+  922.   }
+  923.   
+
+`plist` is introduced by function `persistent_list_get()` that may return NULL.
+
+=== lib/boundingbox.c:289: error: NULL_DEREFERENCE
+  pointer bpts last assigned on line 287 could be null and is dereferenced at line 289, column 3
+  287.     BezPoint *bpts = alloc_polybezier_space(numpoints + 1);
+  288.   
+  289. >   bpts[0].type = BEZ_MOVE_TO;
+  290.     bpts[0].p1 = pts[0];
+  291.   
+  292.   
+
+`bpts` is introduced by function `alloc_polybezier_space()` that may return NULL.
+
+=== plug-ins/vdx/vdx-export.c:1455: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1455, column 13
+  1453.           case '\"':
+  1454.           case '\'':
+  1455. >             strcpy(c, "&quot;"); c += 6;
+  1456.               break;
+  1457.           default:
+  1458.   
+
+`c` is introduced by libc's `realloc(3)` that may return NULL.
+
+=== plug-ins/vdx/vdx-export.c:1451: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1451, column 13
+  1449.               break;
+  1450.           case '>':
+  1451. >             strcpy(c, "&gt;"); c += 4;
+  1452.               break;
+  1453.           case '\"':
+  1454.   
+
+`c` is introduced by libc's `realloc(3)` that may return NULL.
+
+=== plug-ins/vdx/vdx-export.c:1448: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1448, column 13
+  1446.               break;
+  1447.           case '<':
+  1448. >             strcpy(c, "&lt;"); c += 4;
+  1449.               break;
+  1450.           case '>':
+  1451.   
+
+`c` is introduced by libc's `realloc(3)` that may return NULL.
+
+=== plug-ins/vdx/vdx-export.c:1445: error: NULL_DEREFERENCE
+  pointer c last assigned on line 1438 could be null and is dereferenced by call to strcpy() at line 1445, column 13
+  1443.           {
+  1444.           case '&':
+  1445. >             strcpy(c, "&amp;"); c += 5;
+  1446.               break;
+  1447.           case '<':
+  1448.   
+
+`c` is introduced by libc's `realloc(3)` that may return NULL.
+
+=== plug-ins/xslt/xslt.c:157: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 94, column 9 is not released after line 157, column 17
+  155.   	err = xsltSaveResultToFile(out, doc, codestyle);
+  156.   	if(err < 0) {
+  157. > 		message_error(_("Error while saving result: %s\n"), 
+  158.   			      dia_message_filename(filename));
+  159.   		return;
+  160.   
+
+The `file` and `out` leak. They are introduced by `file = g_fopen(diafilename, "r"); out = g_fopen(filename, "w+");`.
+
+=== plug-ins/xslt/xslt.c:105: error: RESOURCE_LEAK
+   resource of type _IO_FILE acquired by call to fopen() at line 94, column 9 is not released after line 105, column 18
+  103.   	
+  104.   	if (out == NULL) {
+  105. > 	  message_error(_("Can't open output file %s: %s\n"), 
+  106.   			dia_message_filename(filename), strerror(errno));
+  107.   	  return;
+  108.   
+
+The `file` leaks. It's introduced by `file = g_fopen(diafilename, "r");`.

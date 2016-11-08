@@ -1,0 +1,236 @@
+=== objects/AADL/aadlbox.c:613: error: NULL_DEREFERENCE
+  pointer aadlbox->connections last assigned on line 608 could be null and is dereferenced at line 613, column 3
+  611.     i = aadlbox->num_connections - 1;
+  612.   
+  613. >   aadlbox->connections[i] = connection;
+  614.     aadlbox->connections[i]->pos = *p;
+  615.     
+  616.   
+
+aadlbox->connectionsはg_malloc()やg_realloc()で確保している。が、両者共にNULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== objects/AADL/aadlbox.c:490: error: NULL_DEREFERENCE
+  pointer aadlbox->ports last assigned on line 485 could be null and is dereferenced at line 490, column 3
+  488.     i = aadlbox->num_ports - 1;
+  489.   
+  490. >   aadlbox->ports[i] = port;
+  491.     aadlbox->ports[i]->handle->id = PORT_HANDLE_AADLBOX;
+  492.     aadlbox->ports[i]->handle->type = HANDLE_MINOR_CONTROL;
+  493.   
+
+aadlbox->portsはg_malloc()やg_realloc()で確保している。が、両者共にNULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/poly_conn.c:194: error: NULL_DEREFERENCE
+  pointer poly->points last assigned on line 191 could be null and is dereferenced at line 194, column 23
+  192.   
+  193.     for (i=poly->numpoints-1; i > pos; i--) {
+  194. >     poly->points[i] = poly->points[i-1];
+  195.     }
+  196.     poly->points[pos] = *point;
+  197.   
+
+poly->pointsはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/polyshape.c:166: error: NULL_DEREFERENCE
+  pointer poly->points last assigned on line 163 could be null and is dereferenced at line 166, column 23
+  164.   
+  165.     for (i=poly->numpoints-1; i > pos; i--) {
+  166. >     poly->points[i] = poly->points[i-1];
+  167.     }
+  168.     poly->points[pos] = *point;
+  169.   
+
+poly->pointsはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/orth_conn.c:886: error: NULL_DEREFERENCE
+  pointer orth->points last assigned on line 884 could be null and is dereferenced at line 886, column 23
+  884.     orth->points = g_realloc(orth->points, orth->numpoints*sizeof(Point));
+  885.     for (i=orth->numpoints-1;i>pos;i--) {
+  886. >     orth->points[i] = orth->points[i-1];
+  887.     }
+  888.     orth->points[pos] = *point;
+  889.   
+
+orth->pointsはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/diarenderer.c:778: error: NULL_DEREFERENCE
+  pointer bezier->points last assigned on line 774 could be null and is dereferenced at line 778, column 3
+  776.     }
+  777.     
+  778. >   bezier->points[bezier->currpoint] = *point;
+  779.     
+  780.     bezier->currpoint++;
+  781.   
+
+bezier->pointsはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== objects/network/bus.c:504: error: NULL_DEREFERENCE
+  pointer bus->handles last assigned on line 497 could be null and is dereferenced at line 504, column 3
+  502.     i = bus->num_handles - 1;
+  503.     
+  504. >   bus->handles[i] = handle;
+  505.     bus->handles[i]->id = HANDLE_BUS;
+  506.     bus->handles[i]->type = HANDLE_MINOR_CONTROL;
+  507.   
+
+bus->handlesはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:277: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 268 could be null and is dereferenced by call to setlocale() at line 277, column 5
+  275.   	return NULL;
+  276.       }
+  277. >     setlocale(LC_NUMERIC,old_locale);
+  278.   
+  279.       arrow = g_new(Arrow, 1);
+  280.   
+
+old_locale = setlocale(LC_NUMERIC, "C"); がNULLを返す可能性があると言っている。
+が、setlocale(3)にはNULLを渡すことができると、Linuxのman pageは主張している。
+
+これはInferのモデルが間違っている。
+
+char* setlocale(int category, const char* locale) {
+  int nondet;
+  __require_allocated_array(locale);
+  __require_allocated_array(_locale_global);
+
+POSIXでもNULLが渡せることになっている。
+
+http://pubs.opengroup.org/onlinepubs/009695399/functions/setlocale.html
+
+この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:274: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 268 could be null and is dereferenced by call to setlocale() at line 274, column 2
+  272.   	       &width, &height) != 5) {
+  273.   	dia_context_add_message(ctx, _("Error while reading arrowhead"));
+  274. > 	setlocale(LC_NUMERIC,old_locale);
+  275.   	return NULL;
+  276.       }
+  277.   
+
+setlocale(3)にはNULLを渡すことができる。この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:439: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 418 could be null and is dereferenced by call to setlocale() at line 439, column 5
+  437.   	return NULL;
+  438.       }
+  439. >     setlocale(LC_NUMERIC, old_locale);
+  440.       
+  441.       /* Curiously, the sub_type doesn't matter, as all info can be
+  442.   
+
+setlocale(3)にはNULLを渡すことができる。この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:436: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 418 could be null and is dereferenced by call to setlocale() at line 436, column 2
+  434.   	       &end_x, &end_y) < 19) {
+  435.   	dia_context_add_message_with_errno(ctx, errno, _("Couldn't read ellipse info."));
+  436. > 	setlocale(LC_NUMERIC, old_locale);
+  437.   	return NULL;
+  438.       }
+  439.   
+
+setlocale(3)にはNULLを渡すことができる。この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:1221: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 1218 could be null and is dereferenced by call to setlocale() at line 1221, column 6
+  1219.   	if (fscanf(file, "%lf\n", &mag) != 1) {
+  1220.   	    dia_context_add_message_with_errno(ctx, errno, _("Error reading magnification."));
+  1221. > 	    setlocale(LC_NUMERIC, old_locale);
+  1222.   	    return FALSE;
+  1223.   	}
+  1224.   
+
+setlocale(3)にはNULLを渡すことができる。この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:355: error: NULL_DEREFERENCE
+  pointer text_buf last assigned on line 358 could be null and is dereferenced by call to strlen() at line 355, column 6
+  353.       text_len = 0;
+  354.       while (fgets(text_buf+text_len, text_alloc-text_len, file) != NULL) {
+  355. > 	if (strlen(text_buf) < text_alloc-1) break;
+  356.   	text_len = text_alloc;
+  357.   	text_alloc *= 2;
+  358.   
+
+text_bufはg_malloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== plug-ins/xfig/xfig-import.c:969: error: NULL_DEREFERENCE
+  pointer old_locale last assigned on line 954 could be null and is dereferenced by call to setlocale() at line 969, column 2
+  967.   	       &y) != 12) {
+  968.   	dia_context_add_message_with_errno(ctx, errno, _("Couldn't read text info."));
+  969. > 	setlocale(LC_NUMERIC, old_locale);
+  970.   	return NULL;
+  971.       }
+  972.   
+
+setlocale(3)にはNULLを渡すことができる。この指摘は濡れ衣(false positive)。
+
+=== lib/orth_conn.c:905: error: NULL_DEREFERENCE
+  pointer orth->handles last assigned on line 902 could be null and is dereferenced at line 905, column 24
+  903.   			  (orth->numpoints-1)*sizeof(Handle *));
+  904.     for (i=orth->numpoints-2;i>segment;i--) {
+  905. >     orth->handles[i] = orth->handles[i-1];
+  906.       orth->orientation[i] = orth->orientation[i-1];
+  907.     }
+  908.   
+
+orth->handlesはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/object.c:643: error: NULL_DEREFERENCE
+  pointer obj->connections last assigned on line 638 could be null and is dereferenced at line 643, column 27
+  641.   
+  642.     for (i=obj->num_connections-1; i > pos; i--) {
+  643. >     obj->connections[i] = obj->connections[i-1];
+  644.     }
+  645.     obj->connections[pos] = conpoint;
+  646.   
+
+obj->connectionsはg_realloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+=== lib/poly_conn.c:258: error: MEMORY_LEAK
+   memory dynamically allocated to new_handle by call to g_malloc() at line 255, column 16 is not reachable after line 258, column 3
+  256.     setup_handle(new_handle, PC_HANDLE_CORNER);
+  257.     add_handle(poly, segment+1, &realpoint, new_handle);
+  258. >   return polyconn_create_change(poly, TYPE_ADD_POINT,
+  259.   				&realpoint, segment+1, new_handle,
+  260.   				NULL);
+  261.   
+
+polyconn_create_change()はnew_handleをObjectChange *に包んで返す。
+そのため、この指摘は濡れ衣(false positive)。
+
+=== objects/AADL/edit_port_declaration.c:90: error: NULL_DEREFERENCE
+  pointer text last assigned on line 89 could be null and is dereferenced by call to strcpy() at line 90, column 3
+  88.   {
+  89.     text = (gchar *) g_malloc (strlen(gtk_entry_get_text (GTK_ENTRY (entry)))+1);
+  90. >   strcpy(text, gtk_entry_get_text (GTK_ENTRY (entry)));
+  91.   }
+  92.   
+  93.   
+
+textはg_malloc()で確保している。が、NULLを返す可能性はない(g_error()になる)ので、この指摘は濡れ衣(false positive)。
+
+というかstrcpyが大丈夫なのか。。。
+
+=== lib/text.c:122: error: NULL_DEREFERENCE
+  pointer text->lines last assigned on line 119 could be null and is dereferenced at line 122, column 22
+  120.   
+  121.     for (i = text->numlines - 1; i > line_no; i--) {
+  122. >     text->lines[i] = text->lines[i - 1];
+  123.     }
+  124.     text->lines[line_no] = text_line_new("", text->font, text->height);;
+  125.   
+
+text->linesはg_realloc()で確保されているので、濡れ衣(false positive)。
+
+=== objects/Misc/tree.c:504: error: NULL_DEREFERENCE
+  pointer tree->handles last assigned on line 497 could be null and is dereferenced at line 504, column 3
+  502.     i = tree->num_handles - 1;
+  503.     
+  504. >   tree->handles[i] = handle;
+  505.     tree->handles[i]->id = HANDLE_BUS;
+  506.     tree->handles[i]->type = HANDLE_MINOR_CONTROL;
+  507.   
+
+tree->handlesはg_realloc()で確保されているので、濡れ衣(false positive)。
