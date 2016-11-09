@@ -23,4 +23,5 @@ void delete(struct foo *f) {
 int main() {
 	struct foo *f;
 	f = create();
+	delete(f);
 }
